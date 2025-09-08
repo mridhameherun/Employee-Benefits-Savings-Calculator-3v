@@ -1,0 +1,264 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+@font-face {
+    font-family: "DharmaGothic";
+    src: url("font/Dharma Gothic.otf") format("opentype");
+}
+
+body {
+    background-color: #fff6e8;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    color: #1b284e;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: "DharmaGothic";
+    margin: 0;
+    line-height: 100px;
+    font-size: 100px;
+}
+
+header p {
+    margin: 10px 0 0;
+    opacity: 0.9;
+}
+
+.main-content {
+    flex-wrap: wrap;
+}
+
+.left-column {
+    display: flex;
+    padding: 25px;
+    border-right: 1px solid #eee;
+    gap: 30px;
+}
+
+.section {
+    width: 100%;
+}
+
+.section h2 {
+    font-family: "DharmaGothic";
+    color: #6237cb;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 30px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.scheme-toggles {
+    display: grid;
+    gap: 15px;
+}
+
+.toggle-container {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-container:hover {
+    background: #eef1f5;
+}
+
+.toggle-container .scheme-name {
+    font-weight: 600;
+    margin: 0;
+    display: block;
+}
+
+.toggle-options {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.toggle-option {
+    flex: 1;
+    text-align: center;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.toggle-option.yes {
+    background-color: #f4ffee;
+    color: #1a1a1a;
+}
+
+.toggle-option.no {
+    background-color: #ffffff;
+    color: #5f6368;
+}
+
+.toggle-option.yes.selected {
+    background-color: #99e86f;
+    color: rgb(0, 0, 0);
+    transform: scale(1.05);
+}
+
+.toggle-option.no.selected {
+    background-color: #a9a9a9;
+    color: white;
+    transform: scale(1.05);
+}
+
+i {
+    color: #1a1a1a69;
+    font-size: 15px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 300px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    padding: 8px 12px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 10;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.savings-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    border-bottom: 2px solid #bcbcbc;
+}
+
+.savings-item:last-child {
+    border-bottom: none;
+}
+
+.savings-item .name {
+    font-family: "DharmaGothic";
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.savings-item .amount {
+    font-family: "DharmaGothic";
+    font-size: 30px;
+    font-weight: 700;
+    color: #6237cb;
+}
+
+.total-savings {
+    background: #e8f0fe;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-savings .label {
+    font-family: "DharmaGothic";
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.total-savings .amount {
+    font-family: "DharmaGothic";
+    font-size: 50px;
+    font-weight: 900;
+    color: #6237cb;
+}
+
+/* Calculation Note */
+.calculation-note {
+    margin-top: 20px;
+    background: #fff6e8;
+    border-left: 4px solid #6237cb;
+    padding: 15px 20px;
+    font-size: 14px;
+    color: #333;
+    border-radius: 6px;
+}
+
+.calculation-note a {
+    color: #6237cb;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .left-column {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .scheme-toggles {
+        grid-template-columns: 1fr;
+    }
+}

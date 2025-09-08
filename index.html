@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Salary Exchange Savings Calculator</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Salary Exchange Savings Calculator</h1>
+        <p>Estimate annual savings from employee benefit schemes</p>
+    </header>
+    <div class="container">
+        <div class="main-content">
+            <div class="left-column">
+                <div class="section">
+                    <h2>Inputs</h2>
+                    <div class="input-group">
+                        <label for="numEmployees">Number of Employees</label>
+                        <input id="numEmployees" min="1" type="number" value="10">
+                    </div>
+                    <div class="input-group">
+                        <label for="avgSalary">Average Salary (£)</label>
+                        <input id="avgSalary" min="1000" step="1000" type="number" value="50000">
+                    </div>
+                    <h3 style="margin-top: 25px; margin-bottom: 15px;">Benefit Schemes</h3>
+                    <div class="scheme-toggles">
+
+                        <!-- Pension Scheme -->
+                        <div class="toggle-container">
+                            <span class="scheme-name">
+                                Pension Scheme
+                                <a class="tooltip">
+                                    <i class="ti ti-alert-circle-filled"></i>
+                                    <span class="tooltip-text">
+                                        <strong>Employees:</strong> Improved tax effective method for employees to pay pension contributions to improve short term and long term financial security and wellbeing.<br><br>
+                                        <strong>Company:</strong> Strengthens benefit offering, and rewards employees with a more secure financial future making them less likely to suffer financial stress which can reduce absenteeism and improve productivity.
+                                    </span>
+                                </a>
+                            </span>
+                            <div class="toggle-options">
+                                <div class="toggle-option yes selected" data-scheme="pension" data-value="yes">Yes</div>
+                                <div class="toggle-option no" data-scheme="pension" data-value="no">No</div>
+                            </div>
+                        </div>
+
+                        <!-- Bonus Exchange -->
+                        <div class="toggle-container">
+                            <span class="scheme-name">
+                                Bonus Exchange
+                                <a class="tooltip">
+                                    <i class="ti ti-alert-circle-filled"></i>
+                                    <span class="tooltip-text">
+                                        <strong>Employees:</strong> Can tailor how they receive their bonus to align with their personal goals and reduce their tax liabilities or ensure they continue to receive certain benefits (e.g. free childcare).<br><br>
+                                        <strong>Company:</strong> Saves the Company money and provides long-term support for employees’ financial wellbeing. Can align with corporate responsibility strategies.
+                                    </span>
+                                </a>
+                            </span>
+                            <div class="toggle-options">
+                                <div class="toggle-option yes selected" data-scheme="bonus" data-value="yes">Yes</div>
+                                <div class="toggle-option no" data-scheme="bonus" data-value="no">No</div>
+                            </div>
+                        </div>
+
+                        <!-- Electric Vehicles -->
+                        <div class="toggle-container">
+                            <span class="scheme-name">
+                                Electric Vehicles
+                                <a class="tooltip">
+                                    <i class="ti ti-alert-circle-filled"></i>
+                                    <span class="tooltip-text">
+                                        <strong>Employees:</strong> Enables them to drive a new car without needing large upfront payments. More cost effective than personal leasing.<br><br>
+                                        <strong>Company:</strong> Enhances the Company’s reputation as a forward-thinking, environmentally responsible employer with attractive benefits.
+                                    </span>
+                                </a>
+                            </span>
+                            <div class="toggle-options">
+                                <div class="toggle-option yes selected" data-scheme="ev" data-value="yes">Yes</div>
+                                <div class="toggle-option no" data-scheme="ev" data-value="no">No</div>
+                            </div>
+                        </div>
+
+                        <!-- Cycle to Work -->
+                        <div class="toggle-container">
+                            <span class="scheme-name">
+                                Cycle to Work
+                                <a class="tooltip">
+                                    <i class="ti ti-alert-circle-filled"></i>
+                                    <span class="tooltip-text">
+                                        <strong>Employees:</strong> Save money, improve health and gain affordable access to cycling.<br><br>
+                                        <strong>Company:</strong> Save on National Insurance, boost employee wellbeing and productivity, and reinforce sustainability and employer brand.
+                                    </span>
+                                </a>
+                            </span>
+                            <div class="toggle-options">
+                                <div class="toggle-option yes selected" data-scheme="cycle" data-value="yes">Yes</div>
+                                <div class="toggle-option no" data-scheme="cycle" data-value="no">No</div>
+                            </div>
+                        </div>
+
+                        <!-- Buy Holiday -->
+                        <div class="toggle-container">
+                            <span class="scheme-name">
+                                Buy Holiday
+                                <a class="tooltip">
+                                    <i class="ti ti-alert-circle-filled"></i>
+                                    <span class="tooltip-text">
+                                        <strong>Employees:</strong> Knowing their employer supports flexibility and personal needs can increase feelings of trust and commitment.<br><br>
+                                        <strong>Company:</strong> Higher employee engagement, retention and productivity whilst keeping costs under control.
+                                    </span>
+                                </a>
+                            </span>
+                            <div class="toggle-options">
+                                <div class="toggle-option yes selected" data-scheme="holiday" data-value="yes">Yes</div>
+                                <div class="toggle-option no" data-scheme="holiday" data-value="no">No</div>
+                            </div>
+                        </div>
+
+                        <!-- Financial Wellbeing -->
+                        <div class="toggle-container">
+                            <span class="scheme-name">
+                                Financial Wellbeing
+                                <a class="tooltip">
+                                    <i class="ti ti-alert-circle-filled"></i>
+                                    <span class="tooltip-text">
+                                        <strong>Employees:</strong> Support with budgeting, debt management and savings helps employees to feel in control of their finances, lowering stress and anxiety in the workplace.<br><br>
+                                        <strong>Company:</strong> Financial stress is a common cause of absence and presenteeism (being at work but distracted). Reducing stress improves attendance, effectiveness and encourages loyalty.
+                                    </span>
+                                </a>
+                            </span>
+                            <div class="toggle-options">
+                                <div class="toggle-option yes selected" data-scheme="wellbeing" data-value="yes">Yes</div>
+                                <div class="toggle-option no" data-scheme="wellbeing" data-value="no">No</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Potential Annual Savings</h2>
+                    <div class="savings-list">
+                        <div class="savings-item">
+                            <span class="name">Pension Scheme <br>
+                                <p style="font-size: 14px;">Pension based on 5% employee contribution</p>
+                            </span>
+                            <span class="amount" id="pension-saving">£0</span>
+                        </div>
+                        <div class="savings-item">
+                            <span class="name">Bonus Exchange <br>
+                                <p style="font-size: 14px;">Bonus Exchange assumes 10% of employees take advantage</p>
+                            </span>
+                            <span class="amount" id="bonus-saving">£0</span>
+                        </div>
+                        <div class="savings-item">
+                            <span class="name">Electric Vehicles <br>
+                                <p style="font-size: 14px;">Electric Vehicles assumes 5% of employees take up</p>
+                            </span>
+                            <span class="amount" id="ev-saving">£0</span>
+                        </div>
+                        <div class="savings-item">
+                            <span class="name">Cycle to Work <br>
+                                <p style="font-size: 14px;">Cycle to Work assumes 10% take up per year with payments over 1 year</p>
+                            </span>
+                            <span class="amount" id="cycle-saving">£0</span>
+                        </div>
+                        <div class="savings-item">
+                            <span class="name">Buy Holiday <br>
+                                <p style="font-size: 14px;">Buy Holiday assumes 10% of employees buy a weeks holiday</p>
+                            </span>
+                            <span class="amount" id="holiday-saving">£0</span>
+                        </div>
+                        <div class="savings-item">
+                            <span class="name">Financial Wellbeing <br>
+                                <p style="font-size: 14px;">Financial wellbeing based on reduced absenteeism</p>
+                            </span>
+                            <span class="amount" id="wellbeing-saving">£0</span>
+                        </div>
+                    </div>
+                    <div class="total-savings">
+                        <span class="label">Total Annual Saving</span>
+                        <span class="amount" id="total-saving">£0</span>
+                    </div>
+
+                    <!-- Final Calculation Note -->
+                    <div class="calculation-note">
+                        <p>
+                            <strong>Note:</strong> These figures are to give an indication of the savings from these benefits and may be subject to change.
+                            For more accurate information and a personalized quote please
+                            <a href="contact.html">contact us</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
